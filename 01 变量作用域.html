@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 变量使用方法
+    //先定义 再使用
+    //不要隐式声明
+
+    //定义变量的两种方式
+    //1 显示定义 var let const = 变量命 有作用域
+    //2 隐式定义 变量名 = 值； 隐式定义的变量是定义在全局的
+    // window.str = '我是字符串' 点语法是对象语法
+    // window就是全局作用域
+
+    //全局作用域
+    // var str = "我是字符串"；
+    // console.log(str);
+    //
+    // var num = 123;
+    //
+    // function logNum() {
+    //     console.log(num);
+    // }
+    //
+    // logNum() //logNum（）执行函数的作用
+
+
+    // function logStr1() {
+    //     var str1 = "我是str1";
+    //     console.log(str1, "logStr1");
+    // }
+    // function logStr2() {
+    //     console.log(str1); // 显示 隐式定义变量 作用域不同
+    //     不管执行的函数在哪都没用
+           //一开始就定义好了  写哪里也白搭
+    //     console.log(str1, "logStr2");
+    // }
+    //
+    // logStr1();
+    // logStr2()
+
+    // function logStr1() {
+    //     // var str1 = "我是str1";
+    //     str1 = "我是str1";
+    //     console.log(str1, "logStr1");
+    // }
+    //
+    // function logStr2() {
+    //     console.log(str1);//隐式声明就可以打印了 因为隐式是全局作用域
+    //     str1.console.log(str1,"logStr2");
+    // }
+    //
+    // logStr1();
+    // logStr2();
+
+    //局部作用域  （function scope 函数作用域 以函数为界限）
+    // 嵌套函数 子函数可以访问父函数变量
+    // function parent() {
+    //     var text1 = "今天天好蓝";
+    //
+    //     function child() {
+    //         console.log(text1);
+    //     }
+    //     child()
+    // }
+    // parent()
+
+//在js5 是没有块级作用域的 只有全局和函数作用域
+
+    //全局
+    // if (true){
+    //     var text1 = "text1"
+    // }
+    //
+    // console.log(text1);//text1
+
+
+    // function test() {
+    //     var text1 = "我是text1";
+    // }
+    //
+    // test();//一执行完这个函数就 上面的变量就销毁 下面不能打印
+    // console.log(text1);
+
+    //以函数为界限 函数外部不能访问函数内部的变量 但是函数的内部可以访问外面的变量
+
+    // if (true){
+    //     let text1 = 'text'
+    //     //在ES6中，这个叫块级作用域 以大括号为界限
+    //     // 外部不能访问 block scope
+    // }
+
+    //面试题
+    //作用域并不会随着你的调用位置而改变
+    function text() {
+        //根本没有str1
+        console.log(str1);
+    }
+
+    function parent() {
+        var str1 = "我是字符串"
+        test();//调用函数
+    }
+    parent();
+
+
+
+
+</script>
+</html>
