@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // var num = 998;
+    // var num1 = 1.234;
+    //
+    // var str1 = parseInt("998");//parseInt("998")
+    // // parseInt 函数可解析一个字符串，并返回一个整数。
+    // console.log((num + str1));
+
+    // var str2 = "今天周二";
+    // var str3 = "明天周三";
+    //   str2 = parseInt(str2);
+    //   str3 = parseInt(str3);
+    //
+    //   if (isNaN(str2)){
+    //       console.log('是NaN');
+    //   }
+
+
+    // 定义字符串
+    //     var str1 = "我是字符串";
+    //     var str2 = '我是字符串';
+    //     var str3 = `我是字符串`;//ES6语法
+    //
+    //   //减法有隐式类型转换
+    //   var str1 = "998";
+    //   var num2 = 222;
+    //   console.log((str1 - num2));
+    //
+    //   //加法没有隐式类型转换 需要自己转化
+    //   var str1 = "998";
+    //   var num1 = parseInt(str1);
+    //   var num2 = 222;
+    //   console.log((num1 + num2));
+
+    //  "\"转义字符
+    // console.log(" I'am a superman ") //可以
+    // // console.log('I'am a super man') 这样报错
+    // console.log('I\' am a super man') //用转义字符 有的时候\有自身意义 那就继续转义
+
+    //boolean值
+    //一切表示没有的都是假的 false
+    //  var str1 = "今天很开心";//true
+    //  var str2 = "";//false
+    //  var num1= 88;//true
+    //  var num2 = 0;//false
+    //  var str4 = "0"//true
+    //
+    // if (num2){
+    //     console.log('是真的');
+    // } else{
+    //     console.log('是假的');
+    // }
+
+
+    //引用数据类型
+    //function Object Array
+
+  //遍历对象中的元素只有一种for (... in ...)
+  //
+  // var name = "personname";
+  //
+  // var obj = {
+  //     [name]:'王力宏',// 加中括号才可以用变量 左边key 右边value
+  //     sex: 'man'
+  // };
+  //
+  // for (var key in obj){
+  //     console.log("key:" + key);
+  //     console.log("value:" + obj[key]);
+  //     console.log(obj[key]);
+  // }
+  //
+  // //取对象中的值 两种方法
+  // console.log(obj.name);//对象语法 点语法一定接字符串
+  //
+  // var text = "name" ;
+  // console.log(obj[text]);
+  // console.log(obj['name']);// 数组语法
+  //
+  // var arr = [
+  //     '中',
+  //     '上',
+  //     '野',
+  //     '复'
+  // ];
+  //
+  // //遍历数组中的元素 有很多种方法 for forEach map  every
+  // for (var i = 0; i < arr.length; i++){
+  //     console.log(arr[i]);
+  // }
+  //
+  //
+  //
+  // //类数组：类似对象的数组 可以用for循环遍历 map 什么的就不能
+  // var obj2 = {
+  //     [0]: "血手",
+  //     [1]: "腐败妖姬",
+  //     [2]: "权杖",
+  //     [3]: "提亚马特",
+  //     [4]: "巫妖",
+  // };
+  //
+  // for (var i = 0; i<obj2.length; i++){
+  //     console.log(obj2[i]);
+  // }
+  //
+  // // 基本数据类型
+  // // number boolean null string undefined 数据都在栈区
+  //
+  // var str1 = "今天周三";
+  // var str2 = "str1";//两个栈区
+  //
+  // str2 = "明天周四";//重新的栈区
+  //
+  // console.log(str1);
+  // console.log(str2);
+  //
+  // //引用数据类型
+  // var arr1 = [2,3,4]; //地址一 栈区 丰台区5楼301
+  // var arr2 = arr1;    //地址二 栈区 丰台区5楼301
+  //
+  // //index 0 1 2
+  // arr2[1] =123;//根据地址来改变 所以都一样
+  // // 丰台区5楼301 刷墙为红色
+  // console.log(arr1, 'arr1');//去看墙的颜色
+  // console.log(arr2, 'arr2');//去看墙的颜色
+
+    // var arr1 = [2,4,6];
+    // var arr2 = [];//栈区地址不同 只要有数组出现 就有地址
+    //
+    // for (var i = 0; i<arr1.length; i++){
+    //     arr2.push(arr1[i])
+    // }
+    //
+    // arr2[1] = 123;
+    // console.log(arr1);// 2 4 6
+    // console.log(arr2);// 1 234 6
+    //
+    //
+    // //形参永远不会改变实参
+    // var text1 = "明天周四";
+    // function changeText(str) { //str 形参是不会因为下面的赋值而改变
+    //     //实际上 var str = text1
+    //     str = '明天周五';
+    // }
+    // changeText(text1); //执行函数 text1实参
+    // console.log(text1);//打印函数
+
+    var obj = {//栈区地址
+        name: "赞恩",
+        desc: "何以为家"
+    };
+
+    function changeJson(json) {
+        // var json = obj 实际上 此时栈区还是和上面的地址一样
+        json.name = '阿萨德' //只是堆区中的内容改变 并没有改变json地址指向
+    }
+
+    changeJson(obj);//实参
+    console.log(obj);
+
+    var str = "998";
+    var str1 = "888.232";
+    //转换整数
+    parseInt();
+    //转换浮点数
+    parseFloat();
+    console.log(parseFloat(str1));
+    //Number()  转换成数字 构造器函数
+    console.log(Number(str1));
+
+
+</script>
+</html>

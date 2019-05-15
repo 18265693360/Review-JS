@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+// 就是用运算符(...?.......:默认或操作；)替代 if...else
+
+
+// 三目运算符
+// 什么是：根据不同的条件，执行不同的操作/返回不同的值
+// 语法： 条件1?值1或操作1: //如果满足条件1，就返回值1或执行操作1
+    // 条件2?值2或操作2: //否则，如果满足条件2，就返回值2或执行操作2
+// ...?..........: 默认值或操作; //否则，（前边条件都不满足） //执行默认操作，或返回默认值 总结：多个条件，多件事，多选一执行。
+// js：如果操作语句比较简单，建议用三目运算替代if..else
+// 总结： 表达式 ?"闰年": "平年“
+// 多种条件 条件1？值1:条件2？值:值3
+
+// eg:  如果total>=500,就打八折,(不到500就什么也不做)
+ var money = prompt("请输入你所购买物品的金额（）元");
+ var total = money*0.8;
+ money = money >=500?total:money;
+ document.write(money);
+//
+//  // 如果用户输入了个人介绍 就显示 没有就""很懒，什么也不留
+//     var reply = prompt("请做出你的评价");
+//     reply = reply! =""?reply:"主人很懒，什么也没留下";
+//     document.write(reply)
+//
+// //判断true/false
+// var name1 = "scot";
+// var name2 = "Jhon";
+// name = name1>name2?"true":"false";
+// alert(name);
+//
+
+</script>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    //节省代码 函数
+    var gir1 = "刘嘉玲";
+    var gir2 = "孙俪";
+    var gir3 = "刘蓓";
+
+    //找到名字里 姓刘的
+    // if (name1[0] == '刘'){
+    //     console.log('性张');
+    // }
+    // if (name2[1] === '') {
+    //
+    // }
+    // if (){
+    //
+    // }
+
+    //iE支持
+    // function getLiu(name) {
+    //     if (name[0] == '刘'){
+    //         console.log(name + '这个人' + '姓刘');
+    //     } else{
+    //         console.log(name + "这个人不姓刘");
+    //     }
+    // }
+    //
+    // getLiu(gir1);
+    // getLiu(gir2);
+    // getLiu(gir3);
+
+
+    //适用于所有浏览器的 charAt(）
+    function getLiu(name) {
+        if (name.charAt(0) == '刘'){
+            console.log(name + '这个人' + '姓刘');
+        } else{
+            console.log(name + "这个人不姓刘");
+        }
+    }
+
+    getLiu(gir1);
+    getLiu(gir2);
+    getLiu(gir3);
+
+    // arguments 是一个对应于传递给函数的参数的类数组对象。
+    function getSum() {
+        console.log(arguments);
+        let sum = 0;
+        for (var i = 0; i < arguments.length; i++){
+            sum += Number(arguments[i])
+        }
+        return sum
+    }
+
+    console.log(getSum(998, 993, 1, 2, 3, 4, 5, 6, 7));
+
+    //类数组 不支持map 真数组可以
+    function getSum() {
+        console.log(arguments);
+        var sum = 0;
+        var arr = [];
+        for (var i=0; i<arguments.length;i++){
+            arr.push(arguments[i]);
+        }
+        arr.map(item =>{
+           sum+=item
+        });
+        return sum
+    }
+
+    console.log(getSum(998, 993, 1, 2, 3, 4, 5, 6, 7));
+
+    //es6
+    function getSum() {
+        console.log(arguments);
+        var sum = 0;
+        // var arr = Array.from(arguments);
+        var arr = [...arguments];//...数组展开运算符就是为了替代 Array.from
+        arr.map(item =>{
+           sum += item;
+        });
+        return sum
+    }
+
+    console.log(getSum(998, 993, 1, 2, 3, 4, 5, 6, 7));
+
+    //剩余参数
+    function getSum(...args) {
+        var sum = 0;
+        args.map(item =>{
+           sum += item;
+        });
+        return sum
+    }
+
+    console.log(getSum(998, 993, 1, 2, 3, 4, 5, 6, 7));
+
+
+
+//箭头函数中一定要用剩余参数 因为箭头函数中没有args
+//     var getSum = () => {
+//         console.log(arguments);
+//     }
+//     console.log(getSum(998, 993, 1, 2, 3, 4, 5, 6, 7));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

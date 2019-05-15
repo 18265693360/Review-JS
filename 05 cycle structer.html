@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    //有值得就是表达式
+    // var a ;
+    // console.log(a = 3);
+    // 表达式构成语句
+
+    //分支结构 switch 判断数据类型 严格注意类型
+    // var num = 1;
+    // switch (num) {
+    //     case 1:
+    //         console.log("结果是1");
+    //         break;
+    //     case 2:
+    //         console.log("结果是2");
+    //         break;
+    //     default:
+    //         console.log("不是1也不是2");
+    // }
+    // // 结果是1
+    //
+    // var num = "1";
+    // switch (num) {
+    //     case 1:
+    //         console.log("结果是1");
+    //         break;
+    //     case "2":
+    //         console.log("结果是2");
+    //         break;
+    //     default:
+    //         console.log("不是1也不是2");
+    // }
+    // //不是1也不是2
+    //
+    // var num = "1";
+    // switch (num) {
+    //     case "1":
+    //         console.log("结果是1");
+    //         break;
+    //     case 2:
+    //         console.log("结果是2");
+    //         break;
+    //     default:
+    //         console.log("不是1也不是2");
+    // }
+    // //结果是1
+    //
+    // var num = 2;
+    // switch (num) {
+    //     case "1":
+    //         console.log("结果是1");
+    //         break;
+    //     case 2:
+    //         console.log("结果是2");
+    //         break;
+    //     default:
+    //         console.log("不是1也不是2");
+    // }
+    // //结果是2
+    //
+    // var num = 2;
+    // switch (num) {
+    //     case "1":
+    //         console.log("结果是1");
+    //     case 2:
+    //         console.log("结果是2");
+    //     default:
+    //         console.log("不是1也不是2");
+    // }
+    //结果是2
+    //不是1也不是2
+
+    // var num = 1;
+    // switch (num) {
+    //     case 1:
+    //         console.log("结果是1");
+    //     case 2:
+    //         console.log("结果是2");
+    //     default:
+    //         console.log("不是1也不是2");
+    // }
+    // //结果是1
+    // // 结果是2
+    // // 不是1也不是2
+    //
+    // //条件
+    // if (num == "1"){
+    //     console.log("结果是1");
+    // } else if(num == "2"){
+    //     console.log("结果是2");
+    // }else{
+    //     console.log("不是1, 也不是2");
+    // }
+
+    //循环结构
+    // var arr = [2,3,4];
+    // for (var i = 0; i<arr.length; i++){
+    //     console.log(arr[i]);
+    // }
+
+    // var i = 0;
+    // while (i<arr.length){
+    //     console.log(arr[i]);
+    //     i++;
+    // }
+
+    // var num = 998;
+    //
+    // do {
+    //     console.log("执行了");
+    //     num--
+    // }while (num>880)
+
+    //99表
+    for (var i = 1; i <=9; i++){
+        var str = " ";
+        //注意 j<=i
+        for (var j = 1; j <=i; j++){
+            str = str + j + "*" + i + "=" + j*i + " ";
+        }
+        console.log(str);
+    }
+
+    // i(5) j(3) k(1/3)
+    //百钱买百鸡
+    for (var i = 0; i <= 20; i++){
+        for (j = 0; j <=34; j++){
+            for (k = 0; k <= 100; k++){
+                if (i+j+k == 100 && i*5+j*3+k/3 == 100){
+                    console.log('公鸡:' + i + ";"
+                                 + "母鸡:" + j + ";"
+                                 + "鸡仔:" + k + ";"
+                    );
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //取模
+    // 3/2 = 1
+    //取余
+    // 6%3 = 0
+
+    // var i = 534;
+    // console.log(i++);//534 此时还是i+1 打印""就是 534
+    // console.log(i);  //535
+    // //i--  ++i同理
+    // var j = 666;
+    // console.log(++j);//667 此时i 已经变了
+    // console.log(j);  //667
+    //
+    //
+    // var num1 = 345;
+    // var num2 = "345";
+    // console.log(num1 == num2);//隐式类型转换
+    //
+    // // 普通关系符  = > <  >=  <=
+    //
+    // //逻辑运算符 与&& 或|| 非！
+    // var num1 = 998;
+    // var num2 = 996;
+    //
+    // function retSelf() {
+    //     console.log("函数执行");
+    //     return num
+    // }
+    //
+    // if (num < 1000 && num2<1000){
+    //     console.log('都小于1000');
+    // }else{
+    //     console.log('不都小于一千');
+    // }
+    //
+    // if (num < 1000 || num2<1000){
+    //     console.log('都小于1000');
+    // }else{
+    //     console.log('不都小于一千');
+    // }
+
+
+
+    // function runCallBack(fn) {
+    //     console.log('将会执行回调函数');
+    //     if (fn){
+    //         fn();//跑起来
+    //     } else{
+    //         console.log('没有传入回调函数');
+    //     }
+    // }
+    //
+    // runCallBack();
+    // //简洁语法
+    // function runCallBack(fn) {
+    //     console.log('将会执行回调函数');
+    //     fn&&fn();//检测有没有传回调函数
+    // }
+    // runCallBack();
+
+
+    //能力检测 ||  兼容IE
+
+    //这样也能传
+    function logName(str) {
+        console.log(str); //今天
+    }
+    logName('今天')
+
+    //执行不传 传一个默认值
+    function logName(str) {
+        str = str || "默认参数"
+        console.log(str);//默认参数
+    }
+
+    console.log(logName());
+
+
+    //位运算
+    //  1000&1001 -> 1000 对位相乘
+    console.log((8 & 9));//8
+    //为什么是 8 二进制运算
+
+
+</script>
+</html>

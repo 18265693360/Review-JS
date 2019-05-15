@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+//break continue return
+//     for (var i = 0; i<10; i++){
+//         if (i == 4){//这里是==
+//            break;
+//         }
+//         console.log(i);
+//     }
+//
+//     for (var i = 0; i<10; i++){
+//         if (i == 4){//跳过4
+//            continue;
+//         }
+//         console.log(i);
+//     }
+//
+//
+
+// // 一个函数执行，必定有一个返回值 且只有一个返回值
+   // return后的代码就都失去效果
+// function isNumOrStr(some) {
+//     if (typeof some == 'number'){
+//         return "是数字"
+//     } else {
+//         return "不是数字"
+//     }
+//     console.log('执行');
+// }
+//
+// function kong() {
+//     return undefined
+// }
+//
+// console.log(kong());
+
+
+    //多个返回值
+// function getSum(x1, x2) {
+//     return Number(x1) + Number(x2)
+// }
+//
+// console.log(getSum(998, 1));//999
+
+    function getSum(x1, x2) {
+        return{
+            x1: x1,
+            x2: x2,
+            sum: Number(x1) + Number(x2)
+        }
+    }
+
+    console.log(getSum(1, 1));
+// sum: 2
+// x1: 1
+// x2: 1
+
+
+</script>
+</html>
