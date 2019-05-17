@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--BOM 客户端JS 就是html css之间的桥梁-->
+
+<!--<textarea name="" id="ta" cols="100" rows="20">-->
+    <!--<h1 id="time"></h1>-->
+    <!--<script>-->
+        <!--var dl = new Date();-->
+        <!--var res = "";-->
+        <!--var y = dl.getFullYear();-->
+        <!--var m = dl.getMonth() + 1;-->
+        <!--var d = dl.getDay();-->
+        <!--var h = dl.getHours();-->
+        <!--var i = dl.getMinutes();-->
+        <!--var s = dl.getSeconds();-->
+
+        <!--res = "今天是" + y + "年" + m + "月" + d + "日, " + h + ":" + i +":" + s;-->
+        <!--document.getElementById('time').innerHTML = res;-->
+    <!--</script>-->
+<!--</textarea>-->
+<!--<br>-->
+<!--<br>-->
+<!--<button id="btn">运行代码</button>-->
+
+<!--<a href="http://wwww.baidu.com">百度</a>-->
+<span id="btnn">点击span 也跳转到百度</span>
+</body>
+<script>
+    var btnn = document.getElementById('btnn');
+    btnn.onclick = function () {
+        window.location.href = "http://www.baidu.com";
+    }
+    // 1，a链接可以控制是在当前窗口打开，还是在新窗口打开
+    // 2，对于location只能在当前窗口打开
+    // 3，location还有一个reload方式，重新加载当前页面（了解）
+
+
+    // //得到这个键
+    // var btn = document.getElementById('btn');
+    // //得到文本域
+    // var ta = document.getElementById('ta');
+    // btn.onclick = function () {
+    //     //打开一个新窗口
+    //     var wl = window.open("", "mywindow");
+    //     wl.document.write(ta.value);
+    // }
+
+
+    // for (var i in window){
+    //     console.log(i);
+    // };
+    //window有一个特点：就是在调用window的方法时，可以把window省略掉。
+
+
+    //window对象方法 常见alert confirm settimeout setinterval cleartimeout
+    // window.alert("hello");//弹出一个警告框，输出相应信息
+    // window.confirm('你要离开');//弹出一个确认框，提醒用户是否确认当前的操作
+    //
+    // var num = window.prompt('请输入一个数')//弹出一个输入框，允许用户输入内容
+    // console.log(num);
+
+    // window.open("", "mywindow", "width=400 , height=300");
+
+    // window frames 对象
+
+
+    //outher objects
+    // Location
+    // 协议 域名 资源路径 查询字符串 哈希值
+    // <a href=""></a> a标签有一个href属性
+
+    //实际开发中 不需要a 标签也可以跳转页面
+
+    //history有三个方法
+    // forward();
+    // back();
+    // go();
+    // go(1) forward
+    // go(-1) back
+    // go可以灵活指定是向前还是后退
+    // go(1)  等价于 forward()
+    // go(-1) 等价于 back()
+
+
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    •	JavaScript是ECMA的产物，只是一门语言而已
+    •	DOM 则是W3C的标准，只是提供了一个处理页面的标准而已
+    •	二者的完美结合，可实现web开发中的任何需求。正所谓 1+1>2
+    •	好比演员和剧本的关系
+
+          属性节点
+    <h1 title="属性">HTML文档</h1> 整体是一个元素节点
+                     文本节点
+</div>
+<div>
+    <h1 title="属性" id="t1">HTML文档</h1>
+    <p>这是一个 <strong>简单</strong>的文档</p>
+</div>
+</body>
+<script>
+    var t1 = document.getElementById('t1');
+    console.log(t1);
+    //可以获取元素节点类型
+    console.log(t1.nodeType);//1表示元素节点
+    var tn1 = t1.firstChild;
+    console.log(tn1.nodeType);//3表示文本节点
+</script>
+<script>
+// Document.cookie =⇒ 获取浏览器上的cookie
+//
+// 在DOM形成的树形结构中，都有哪些类型的节点？
+// 实际上，在html树形结构中，每一个组成元素的都是节点（node）
+// 根据节点的信息不同，可以分成如下三种常见的节点：
+// •	元素节点
+// •	属性节点
+// •	文本节点
+
+//       属性节点
+// <h1 title="属性">HTML文档</h1> 整体是一个元素节点
+//                  文本节点
+
+
+
+
+
+
+</script>
+</html>
