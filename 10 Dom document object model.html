@@ -5,20 +5,39 @@
     <title>Title</title>
 </head>
 <body>
+<ul>
+    <li>html</li>
+    <li>css</li>
+    <li>js</li>
+</ul>
+
+<h1 id="tag">使用标准方式来获取元素</h1>
+<ul>
+    <li>使用getElementById</li>
+    <li>使用getElementByTagName</li>
+</ul>
+
 <div>
     •	JavaScript是ECMA的产物，只是一门语言而已
     •	DOM 则是W3C的标准，只是提供了一个处理页面的标准而已
     •	二者的完美结合，可实现web开发中的任何需求。正所谓 1+1>2
     •	好比演员和剧本的关系
 
-          属性节点
+    属性节点
     <h1 title="属性">HTML文档</h1> 整体是一个元素节点
-                     文本节点
+    文本节点
 </div>
 <div>
     <h1 title="属性" id="t1">HTML文档</h1>
     <p>这是一个 <strong>简单</strong>的文档</p>
 </div>
+
+<form action="" method="post" name="form1">
+    <label for="">用户名：</label>
+    <input type="text" name="username" value="admin" id="user">
+    <br>
+    <input type="submit" value="注册">
+</form>
 </body>
 <script>
     var t1 = document.getElementById('t1');
@@ -29,23 +48,76 @@
     console.log(tn1.nodeType);//3表示文本节点
 </script>
 <script>
-// Document.cookie =⇒ 获取浏览器上的cookie
-//
-// 在DOM形成的树形结构中，都有哪些类型的节点？
-// 实际上，在html树形结构中，每一个组成元素的都是节点（node）
-// 根据节点的信息不同，可以分成如下三种常见的节点：
-// •	元素节点
-// •	属性节点
-// •	文本节点
+    // Document.cookie =⇒ 获取浏览器上的cookie
+    //
+    // 在DOM形成的树形结构中，都有哪些类型的节点？
+    // 实际上，在html树形结构中，每一个组成元素的都是节点（node）
+    // 根据节点的信息不同，可以分成如下三种常见的节点：
+    // •	元素节点
+    // •	属性节点
+    // •	文本节点
 
-//       属性节点
-// <h1 title="属性">HTML文档</h1> 整体是一个元素节点
-//                  文本节点
+    //       属性节点
+    // <h1 title="属性">HTML文档</h1> 整体是一个元素节点
+    //                  文本节点
+
+    //原始节点
+    var ul = document.body.firstChild;
+    var ull = document.body.children[0];
+    console.log(ul);
+    console.log(ull);
+    console.log(ul.firstChild.nodeValue);
+
+    //DOM1 标准方法
+    // getElementById() 通过元素的ID 属性 获取元素
+    // getElementByTagName 通过标签的名称来获取元素
+    var h1 = document.getElementById('tag');
+    console.log(h1);
+
+    var lis = document.getElementsByTagName('li');//伪数组
+    console.log(lis);
+    // id属性是当前页面中是唯一的。 针对getElementByTagName，
+    // 不管有多少个标签，得到的结果是一个数组。
+
+    //选取页面中元素
+    // •	1，直接使用DOM0级方式
+    // •	2，节点之间的关系
+    // •	3，标准方法
+    //1
+    var ul = document.forms[0].username;
+    console.log(ul);
+    var u2 = document.forms['form1'].username;
+    console.log(u2);
+    //3
+    var u5 = document.getElementById('user');
+    console.log(u5);
+    //2
+    var u7 = document.body.firstChild.nextSibling.childNodes[3];
+
+    //other ways
+    // getElementByName
+    var u8 = document.getElementsByName()
 
 
-
-
-
-
+    // DOM2 事件绑定 样式表操作
+    // DOM3 验证功能
 </script>
+<script>
+    // 6.操作元素
+    // 创建 createElement
+    // appendChild insertBefor 插入
+    // 复制cloneNode
+    // 删除removeChild
+    // 替换replaceChild
+</script>
+
+
+
+
+
+
+
+
+
+
 </html>

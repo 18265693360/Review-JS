@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--appendChild: 在父元素的最后来追加，
+追加的元素作为父元素的最后一个节点-->
+
+<!--insertBefore:
+在父元素的某一个子元素之前插入新的元素-->
+<div>
+    <!--<button id="btn">创建元素</button>-->
+    <button id="ttp">创建</button>
+</div>
+
+
+<button id="btn">删除</button>
+<div id="box">
+    <h2>删除操作</h2>
+    <p>段落</p>
+</div>
+</body>
+<script>
+    //appendChild 已经放入DOM树中
+    //得到这个按钮
+    // var btn = document.getElementById('btn');
+    // //注册点击事件
+    // btn.onclick = function () {
+    //     //创建一个h1元素
+    //     var h1 = document.createElement('h1');
+    //     h1.innerText = '这是一个新创建的元素'
+    //     document.body.appendChild(h1)
+    // }
+
+    //insertBefore 在父元素的某一个子元素之前插入新的元素
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+        //创建一个h1元素
+        var h1 = document.createElement('h1');
+        h1.innerHTML = "这是一新创建的元素";
+        document.body.insertBefore(h1, btn);
+    }
+
+    // var ttp = document.getElementById('ttp');
+    // ttp.onclick = function () {
+    //     var h3 = document.createElement('h3');
+    //     h3.innerHTML = '这是一个新创建的元素';
+    //     document.body.insertBefore(h3,ttp);
+    // }
+
+    //删除只有父元素可以删除子元素
+    var btn = document.getElementById('btn');
+    //得到父元素
+    var box = document.getElementById('box');
+    var h2 = document.getElementById('h2');
+
+    tt.onclick = function () {
+        box.removeChild(h2)
+    }
+
+</script>
+</html>
