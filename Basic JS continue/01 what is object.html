@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 对象是类似于一下的数据特征
+    //
+    var computer = {
+        cpu:"酷睿i7",
+        ram: "金士顿骇客神条",
+        hardDisk:"固态硬盘1T",
+        zhuban:"七彩虹b75主板"
+    }
+
+    // 怎样建立一个对象
+    // 1.对象字面量方式
+    // eg:
+
+    // var person1 = {
+    //     name: "张云雷",
+    //     desc: "相声"
+    // };
+    //
+    // var person2 = {
+    //     name: "岳云鹏",
+    //     desc: "名人"
+    // };
+
+    //字面量代码冗余 不如构造器
+
+
+    //构造器函数
+    // function MakePerson(name, desc) { //工厂函数
+    //     return{
+    //         name: name,
+    //         desc: desc
+    //     }
+    // }
+    //
+    // var person1 = MakePerson1('王力宏', '演员')
+    // var person2 = MakePerson2('金泫雅', '艺人')
+    //
+    // console.log(person1);
+    // console.log(person2);
+
+    //新的写法
+    //构造器函数
+    //抛弃return  用this.语法
+    // function MakePerson(name, desc) {
+    //     this.name = name;
+    //     this.desc = desc;
+    // }
+    //
+    // var person1 = new MakePerson('郭德纲', '相声大师');
+    // var person2 = new MakePerson('于谦', '捧哏大师');
+    //
+    // console.log(person2);
+    // console.log(person1);
+
+     //创建一个新对象的方法
+    // 1.创建一个新的对象
+    // 2.将构造器函数的this指向新生成的对象
+    // 3.将新生成的对象中的_proto__指向构造器函数的原型对象Object
+    // 4.返回新的对象
+
+
+    //使用对象 两种方法 .语法  中括号语法
+    var obj = {
+        name: "岳云鹏",
+        desc: "大师"
+    };
+
+
+
+    var name = "desc";
+    console.log(obj.name);
+
+    //中括号 解析一个变量作为属性名 name为变量
+
+    console.log(obj[name]);
+
+</script>
+</html>

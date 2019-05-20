@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // date构造器函数 浏览器内置的对象
+    // 专门针对对象
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth();
+    var monthNum = date.getDate();
+    var hour = date.getHours();
+    var min = date.getMinutes();
+    var seconds = date.getSeconds();
+    var minS = date.getMilliseconds();
+
+
+    //补零函数 因为要补的很多
+    function fixedZero (num){
+        // if (num < 10){
+        //     return "0" + num
+        // } else{
+        //     return " " + num //空字符串 + num num也会转为字符串
+        // }
+        return num < 10? "0" + num: "" + num //三目
+    }
+
+
+    //想要的 2019-05-20 15：04：38 999
+    console.log("现在的时间是");
+    //                        优先运算（）
+    // console.log(year + "-" + (month+1) + "-" + monthNum + " " + hour +":" + min + ":" + seconds + " " + minS);
+    console.log(year + "-" + fixedZero(month+1) + "-"+fixedZero(monthNum) + " "+fixedZero(hour)+":"+fixedZero(min)+ ":"+fixedZero(seconds) + " " + minS);
+
+    //MDN文档 date  setDate
+    // setDate用法
+    // setUTCFullYear() 方法根据世界标准时间为一个具体日期设置年份。
+    var date = new Date();//生成一个当前时间对象
+    date.setDate(date.getDate() + 15); //十五天后是哪一天
+    console.log(date.toLocaleDateString());
+
+    //获取 unix时间戳
+    var date = new Date();
+    var unix = Math.round(date.getTime() / 1000);
+    console.log(unix);
+
+    //取一个8-20的整数
+    //直接取8到20 不方便 但是8到20差12个参数 取1到12很方便
+    var num = Math.ceil(Math.random()*12);
+    var number = num +8;
+    console.log(number);
+
+
+</script>
+</html>
