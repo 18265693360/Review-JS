@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 500px;
+            height: 200px;
+            border: 1px solid #000;
+            background: #ff0;
+        }
+    </style>
+</head>
+<body>
+<!--脚本化CSS 就是用JS控制CSS-->
+
+<!--<div id="box" style="display: block"></div>-->
+<div id="box"></div>
+<button id="btn">切换显示</button>
+</body>
+<script>
+    var box = document.getElementById('box');
+    var btn = document.getElementById('btn');
+
+    // btn.onclick = function () {
+    //     console.log(1);
+    //     // console.log(box.style.display);
+    //     if (box.style.display == "block"){
+    //         box.style.display = "none";
+    //     }  else{
+    //         box.style.display = "block";
+    //     }
+    // }
+
+
+    //为了避免行内样式  getComputedStyle
+    // btn.onclick = function () {
+    //     console.log(1);
+    //     // console.log(box.style.display);
+    //     console.log(getComputedStyle(box));//计算属性
+    //     if (getComputedStyle(box).display == "block"){
+    //         box.style.display = "none";
+    //     }  else{
+    //         box.style.display = "block";
+    //     }
+    // }
+
+    btn.onclick = function () {
+        console.log(1);
+        // console.log(box.style.display);
+        if (getStyle(box, "display") == "block"){
+            box.style.display = "none";
+        }  else{
+            box.style.display = "block";
+        }
+    }
+
+
+
+    //为了兼容IE 需要能力检测
+    function getStyle(dom, prop) {
+        // 标准浏览器语法
+        // getComputedStyle(dom)
+        // 老版本IE浏览器的语法
+        // dom.currentStyle
+
+        //能力检测
+        if (window.getComputedStyle){
+            return getComputedStyle(dom)[prop]
+        } else {
+            return dom.currentStyle[prop]
+        }
+    }
+
+
+
+</script>
+</html>

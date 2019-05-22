@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul">
+    <li>我是一个li</li>
+</ul>
+</body>
+<script>
+    var ul = document.getElementById('ul');
+    var li1 = ul.children[0];
+    // var cloneLi = li1.cloneNode();//这时候有li
+    // 但是作为子元素的内容并没有在其中
+    var cloneLi = li1.cloneNode(true);//深度克隆
+    ul.appendChild(cloneLi);
+
+
+    //深浅拷贝（克隆）并不会复制点击事件
+    li1.onclick = function () {
+        console.log('li1点击了');
+    }
+</script>
+</html>

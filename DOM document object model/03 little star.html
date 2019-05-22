@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1205997_cp9w0ywyvnh.css">
+    <style>
+        .icon-xiaoxingxing1{
+            font-size: 100px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <i class="iconfont icon-xiaoxingxing1"></i>
+    <i class="iconfont icon-xiaoxingxing1"></i>
+    <i class="iconfont icon-xiaoxingxing1"></i>
+    <i class="iconfont icon-xiaoxingxing1"></i>
+    <i class="iconfont icon-xiaoxingxing1"></i>
+    <i class="iconfont icon-xiaoxingxing1"></i>
+    <i class="iconfont icon-xiaoxingxing1"></i>
+    <i class="iconfont icon-xiaoxingxing1"></i>
+</div>
+</body>
+<script>
+    //获取标签
+    var box = document.getElementById('box');
+    var is = box.getElementsByClassName('iconfont');
+    //document. 获取时浏览器会扫描整个文档 如果知道在哪可以直接获取
+    // box. (...) 节约性能
+
+
+    //点击事件中的 this 是指向事件源本身
+    for (var i = 0; i <is.length; i++){
+        console.log(is[i]);
+        is[i].index = i;
+        is[i].onclick = function () {
+            console.log(this.index);
+            for (var n = 0; n < is.length; n++){
+                is[n].style.color = '#888';
+            }
+            for (var m = 0; m <  this.index+1 ;m++){
+                is[m].style.color = '#ff0'
+            }
+        }
+    }
+
+
+
+
+
+
+
+</script>
+</html>

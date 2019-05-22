@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--在DOM树形结构中，所有元素的内容都是一个文本节点-->
+
+<div id="container">
+    <h1>我是老大</h1>
+</div>
+<button id="btn">设置文本</button>
+<button id="btn1">设置文本</button>
+<button id="btn2">设置文本</button>
+<button id="btn3">获取文本</button>
+</body>
+<script>
+
+    var container = document.getElementById("container");
+    var btn = document.getElementById('btn');
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var btn3 = document.getElementById('btn3');
+
+    btn3.onclick = function(){
+        //仅仅获取文本
+        console.log(container.innerText);
+        //也获取 标签
+        // console.log(container.innerHTML);
+    };
+
+
+    // innertext 设置/添加 文本
+    btn.onclick = function () {
+        container.innerText = "我又想你了"//innertext
+    };
+
+    //innerHTML 与 innertext的区别 前者在body中创建了h1标签
+    //innerText仅仅就是添加了文本
+    btn1.onclick = function () {
+        container.innerHTML = "<h1>我是一级标题</h1>"
+    };
+
+    //textContent 与 innerText 差不多
+    btn2.onclick = function () {
+        // container.innerText = "<h1>我是一级标题</h1>"
+        container.textContent = "<h1>我是一级标题</h1>"
+    };
+//一般用innerText
+
+    //为什么不能用 innerHTML
+    //容易导致XSS攻击
+    // XSS攻击就是说 一个人在innerHTML中输入了一段代码 有可能导致
+    // 所有用户的界面出现弹窗
+
+
+
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #table {
+            width: 500px;
+            border: 1px solid #000;
+            border-collapse: collapse;
+            /*合并边框*/
+        }
+        td{
+            border: 1px solid #000;
+            padding: 100px 100px;
+        }
+    </style>
+</head>
+<body>
+<table id="table"></table>
+<button id="btn">添加内容</button>
+</body>
+<script>
+    var table = document.getElementById('table');
+    var btn = document.getElementById('btn');
+
+    // btn.onclick = function () {
+    //     var tr = document.createElement('tr');
+    //     var td1 = document.createElement('td');
+    //     var td2 = document.createElement('td');
+    //
+    //     td1.innerText = '第一个单元格';
+    //     td2.innerText = '第二个单元格';
+    //
+    //     tr.appendChild(td1);
+    //     tr.appendChild(td2);
+    //
+    //     table.appendChild(tr);
+    // }
+
+    //另一种方法
+    btn.onclick = function () {
+        //    插入行    第几行
+        table.insertRow(0);
+        //    //行数    插入单元格
+        table.rows[0].insertCell(0);
+        table.rows[0].cells[0].innerText = "第一个单元格";
+        table.rows[0].insertCell(1);
+        table.rows[0].cell[1].innerText = "第二个单元格";
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

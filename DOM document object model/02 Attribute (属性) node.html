@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="checkbox" title="用户输入框" value="521" id="write" zidingyi="beauty" checked>
+<!--value title type id都是属性-->
+<button id="btn"> 设置value=998</button>
+
+
+</body>
+<script>
+    var write = document.getElementById('write');
+
+
+    //获取属性 getAttribute
+    //getAttribute 可以获取任何属性 自定义 & W3C定义
+    //.语法只能获得w3c 定义的属性
+    console.log(write.getAttribute('title'));
+    console.log(write.getAttribute('id'));
+    console.log(write.getAttribute('type'));
+
+
+
+    //设置属性 setAttribute
+    //自定义属性也需要setAttribute设置
+    //.语法并不万能
+    btn.onclick = function () {
+        write.setAttribute('value', '888')//需要两个参数 属性名 属性值
+    };
+
+    btn.onclick = function () {
+        write.setAttribute('type', 'password')
+    };
+
+    //不对
+    // btn.onclick = function () {
+    //     write.zidingyi = "做我女朋友";
+    // }
+
+    //移除属性 removeAttribute
+    btn.onclick = function () {
+        write.removeAttribute('checked')//移除字需要一个参数
+    }
+</script>
+</html>
