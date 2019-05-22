@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //数组创建方法两种  数组中可以有很多种数据类型
+    //数组字面量
+    var arr1 = [123,"今天真好"];
+
+    //构造器函数构造生成数组
+    var arr2 = new Array(123, "今天是521");
+    console.log(arr1);
+    console.log(arr2);
+
+    var arr3 = new Array(9);
+    console.log(arr3);
+
+    //尽量使用字面量生成新的数组
+    // 因为构造器函数会导致参数不一致性 多个参数和一个参数存在不一致性
+
+
+    console.log(arr2[0]);
+    console.log(arr2[1]);
+
+    //数组是特使的对象
+    var arr4 = {
+        [0]: "324",
+        [1]:"昨天是520"
+    };
+
+    console.log(arr4[0]);
+    console.log(arr4[1]);
+
+    //数组的基本操作
+    var arr5 = ["大学","中庸","论语","孟子"];
+    //push 在数组尾部添加 数据
+    // arr5.push("四大名著");
+    // console.log(arr5);
+    //
+    // //unshift 在数组的前面添加 红楼梦
+    // arr5.unshift("红楼梦");
+    // console.log(arr5);
+    //
+    // //pop 删除数组尾部 的内容
+    // arr5.pop();
+    // console.log(arr5.pop());//返回删除的数据
+    // 所有删除的都可以返回找到
+    // console.log(arr5);
+    //
+    // //shift 删除最前面的数据
+    // arr5.shift();
+    // console.log(arr5.shift());
+    // console.log(arr5);
+    //
+    // //splic 删除中间的数据 splic(从什么部位开始删除，
+    // // 删除多少个，删除完后添加什么)
+    // console.log(arr5.splice(1, 1));
+    // console.log(arr5);
+
+    //splic把中庸替换成红楼梦
+    //splic(哪一个元素,个数,"替换元素")
+    console.log(arr5.splice(1, 1, "水浒传"));
+    console.log(arr5);
+
+    //在大学后面添加小学
+    console.log(arr5.splice(0, 0, "小学"));
+    console.log(arr5);
+
+    //splic实现unshift
+    arr5.splice(0,0,"海洋之心");
+
+    //splic实现push
+                //也是为了表示最后一项
+    arr5.splice(arr5.length, 0 , "肖申克的救赎")
+
+    //使用splic 实现pop方法
+    //           这是为了表示最后一项 直接用arr5.splice（）也行
+    arr5.splice(arr5.length -1,1);
+
+    //使用splic 实现shift
+    arr5.splice(0,1);
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

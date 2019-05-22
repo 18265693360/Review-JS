@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //创建字符串的两种方式
+    //1.字面量方式
+    //2.构造器函数
+
+    var str = "今天周一";
+
+    console.log(str.length);
+    console.log(str[1]);//取天
+
+    var arr = str.split('');
+    //专数组 split("-")
+    console.log(arr[1]);
+
+    //最好的取天法 charAt
+    console.log(str.charAt(1));
+    //search
+    console.log(str.search('金子'));//-1
+
+
+    // substr substring
+    //substr 第一个参数指定数组从什么位置取
+    // 第二个参数取多长（第二个参数的默认值是数组长度）
+    var str1 = "我爱你 我想你"
+    console.log(str1.substr(2, 5));
+
+    //substring 第一个参数开始 第二个参数结束位置
+   //默认值就是数组的长度
+    console.log(str1.substring(1, 3));
+
+
+    //toLowercase 转换成小写
+    //toUppercase 转换成大写
+    var str3 = "jdsfijdisf";
+    var str4 = "GFDGREGH";
+    console.log(str3.toUpperCase());
+    console.log(str4.toLowerCase());
+
+    //替换 replace
+    var str5 = "我不喜欢你了呢";
+    // 被替换元素  替换元素
+    console.log(str5.replace('不喜欢', '喜欢'));
+</script>
+</html>

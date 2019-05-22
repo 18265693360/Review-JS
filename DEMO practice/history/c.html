@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>我是a页面</h1>
+<a href="b.html">跳转到第二个页面</a>
+<button id="forward">前进</button>
+<button id="goc">前进到c</button>
+<button id="rush">刷新当前页面</button>
+<button id="back">返回b页面</button>
+</body>
+<script>
+    var forward = document.getElementById('forward');
+    var goc = document.getElementById('goc');
+    var rush = document.getElementById('rush');
+    var back = document.getElementById('back');
+
+    forward.onclick = function () {
+        history.forward()
+    }
+
+    goc.onclick = function () {
+        history.go(2)//前进两个
+    }
+
+    //go(0)是刷新
+    rush.onclick = function () {
+        history.go(0)
+    }
+
+    back.onclick = function () {
+        history.go(1)
+    }
+
+</script>
+</html>

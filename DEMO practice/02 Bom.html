@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            position: fixed;
+            top: 200px;
+            right: 30%;
+            transform: translate(-30%, 0);
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            border: 1px solid #e2e3e5;
+            background: #409eff;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <p>你确定要离开吗？</p>
+
+    <button id="btn">确定</button>
+    <button id="bt1">取消</button>
+</div>
+</body>
+<script>
+    var str = prompt("请输入内容");
+    console.log(str);
+
+    //浏览器的bom基本各不相同 所以实现window对象使用自己的方法
+    var box = document.getElementById('box');
+    var btn = document.getElementById('btn');
+    var bt1 = document.getElementById('bt1');
+
+    setTimeout(()=>{
+        box.style.display = 'block';
+    },2000);
+
+    btn.onclick=function () {
+        box.style.display = 'none';
+    };
+
+    bt1.onclick = function () {
+        box.style.backgroundColor = '#888';
+    }
+
+
+
+    //open 打开一个新窗口 close关闭
+
+
+    //history
+    // go()
+    // forward()
+    // back()
+    //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

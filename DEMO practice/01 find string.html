@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="https://www.baidu.com">
+    用户名：<input type="text" name="username">
+    <br>
+    密码：<input type="password" name="password">
+    <br>
+    <button>提交</button>
+    <!--表单中只有一个按钮默认就是提交按钮-->
+</form>
+</body>
+<script>
+    // 获取字符串
+    // https://www.baidu.com/?username=admin&password=123456
+       console.log(location);
+    // 添加hash #num + enter键
+    // location 中包括hash host hostname（域名） port
+
+    // 资源路径
+    //http://localhost:63342/repoaire-s/Review%20JS/DEMO%20practice/01%20find%20string.html?_ijt=52cjsorvuu6abk2pu3fidog5f1#435
+    // 查字符串
+    // 前后端交互就是字符串你的传输获取
+
+    // substr 第一个参数指定数组从什么位置取
+    // 第二个参数取多长（第二个参数的默认值是数组长度）
+    // 转数组 -- split
+
+
+    var str = "?username=admin&password=admin123";
+
+    var str1 = str.substr(1);
+    var arr = str1.split('&');
+    console.log(arr);
+
+    // function getQueryStr(str) {
+    //     var str1 = str.substr(1);
+    //     var arr = str1.split("&");
+    //
+    //     for (var i = 0; i < arr.length; i++){
+    //         var subArr = arr[i].split("=");// =分割 拿到键和值
+    //     }
+    // }
+
+
+    //最简单的还是操作对象
+    function getQueryStr(str) {
+        var obj = {};
+        var str1 = str.substr(1);
+        var arr = str1.split("&");
+
+        for (var i = 0; i < arr.length; i++){
+           var subArr = arr[i].split("=");
+            console.log(subArr);
+            // 0: "username=admin"  （键 + 键值）
+            // 1: "password=admin123"
+            obj[subArr[0]] = subArr[1];
+        }
+        return obj;
+    }
+
+    console.log(getQueryStr(str));
+
+    var obj1 = getQueryStr(str);
+    //获取对象中的元素
+    console.log(obj1.username);
+    console.log(obj1.password);
+
+    // .语法可以获取到 这个不行 console.log(obj1[username]);
+
+    //获得对象语法的形式 取字符串就很方便
+    // password: "admin123"
+    // username: "admin"
+
+
+</script>
+
+</html>
