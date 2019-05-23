@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: #409eff;
+            border: 1px solid #000;
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    //事件三要素
+    1.事件源
+    2.事件类型
+    3.事件函数
+</div>
+<div id="box1"></div>
+<div id="box2"></div>
+</body>
+<script>
+    var aDiv = document.getElementsByTagName('div');
+    aDiv[0].onclick = function () {
+        console.log(this);
+    };
+    aDiv[1].onclick = function () {
+        console.log(this);
+    };
+    aDiv[2].onmousemove = function () {
+        console.log('鼠标进入');
+    }
+</script>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width: 100px;
+            height: 200px;
+            background: #ff0;
+            border: 1px solid #000;
+            padding: 10px;
+            margin-left: 20px;
+        }
+
+        .container{
+            width: 200px;
+            height: 500px;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<button id="btn">显示滚动距离</button>
+<div class="container">
+    <!--p{我是第几行$}*60-->
+    <p>我是第几行1</p>
+    <p>我是第几行2</p>
+    <p>我是第几行3</p>
+    <p>我是第几行4</p>
+    <p>我是第几行5</p>
+    <p>我是第几行6</p>
+    <p>我是第几行7</p>
+    <p>我是第几行8</p>
+    <p>我是第几行9</p>
+    <p>我是第几行10</p>
+    <p>我是第几行11</p>
+    <p>我是第几行12</p>
+    <p>我是第几行13</p>
+    <p>我是第几行14</p>
+    <p>我是第几行15</p>
+    <p>我是第几行16</p>
+    <p>我是第几行17</p>
+    <p>我是第几行18</p>
+    <p>我是第几行19</p>
+    <p>我是第几行20</p>
+    <p>我是第几行21</p>
+    <p>我是第几行22</p>
+    <p>我是第几行23</p>
+    <p>我是第几行24</p>
+    <p>我是第几行25</p>
+    <p>我是第几行26</p>
+    <p>我是第几行27</p>
+    <p>我是第几行28</p>
+    <p>我是第几行29</p>
+    <p>我是第几行30</p>
+    <p>我是第几行31</p>
+    <p>我是第几行32</p>
+    <p>我是第几行33</p>
+    <p>我是第几行34</p>
+    <p>我是第几行35</p>
+    <p>我是第几行36</p>
+    <p>我是第几行37</p>
+    <p>我是第几行38</p>
+    <p>我是第几行39</p>
+    <p>我是第几行40</p>
+    <p>我是第几行41</p>
+    <p>我是第几行42</p>
+    <p>我是第几行43</p>
+    <p>我是第几行44</p>
+    <p>我是第几行45</p>
+    <p>我是第几行46</p>
+    <p>我是第几行47</p>
+    <p>我是第几行48</p>
+    <p>我是第几行49</p>
+    <p>我是第几行50</p>
+    <p>我是第几行51</p>
+    <p>我是第几行52</p>
+    <p>我是第几行53</p>
+    <p>我是第几行54</p>
+    <p>我是第几行55</p>
+    <p>我是第几行56</p>
+    <p>我是第几行57</p>
+    <p>我是第几行58</p>
+    <p>我是第几行59</p>
+    <p>我是第几行60</p>
+</div>
+</body>
+<script>
+    var box = document.getElementById('box');
+
+    console.log(box.offsetTop);
+    console.log(box.offsetLeft);  //20
+    console.log(box.offsetHeight);//222
+
+    console.log(getComputedStyle(box).width);//100px 得到字符串
+
+    // offsetWidth padding + width + border
+
+
+    //不要随便使用 offsetWidth 因为浏览器的优化政策
+    box.style.width = "200px";
+
+    // box.offsetLeft
+    box.style.width = "900px";
+    //重绘次数一次 直接绘最后一个
+    //假如中间加了 offset就会绘两次因为只有绘出来才知道尺寸
+
+
+    var container = document.getElementsByClassName('container');
+    var btn = document.getElementById('btn')
+    //获得高度 scrollTop 混动距离
+    btn.onclick = function () {
+        console.log(box.scrollTop);
+    }
+
+
+    //兼容性写法
+    btn.onclick = function () {
+        var scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+        console.log(document.documentElement.scrollTop);
+    }
+
+
+
+
+
+
+
+
+</script>
+</html>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">点击</button>
+</body>
+<script>
+    var btn = document.getElementById('btn');
+
+
+    //事件绑定  为了专事专用  addEventListener
+
+    //标准浏览器
+    // btn.addEventListener('click',function () {
+    // console.log('小明的事件');
+    // })
+
+
+    //IE
+    // btn.attachEvent('onclick', function () {
+    // console.log('小张的事件');
+    // })
+
+
+    on(btn,'click',function () {
+        console.log('小郑的事件');
+    });
+
+    on(btn, 'click', function () {
+        console.log('小明的事件');
+    });
+
+    //标准+IE 通用写法
+    //          dom  事件   回调函数
+    function on(dom, event, fn) {
+        if (dom.addEventListener){
+            dom.addEventListener(event, fn)
+        } else{
+            dom.attachEvent('on'+event, fn)
+        }
+    }
+
+    //封装后的结果
+
+</script>
+</html>

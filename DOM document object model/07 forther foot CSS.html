@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         .addStyle {
+             font-size: 30px;
+             width: 200px;
+             height: 100px;
+             line-height: 100px;
+             border: 1px solid #000;
+         }
+    </style>
+</head>
+<body>
+<div id="box">
+这是添加的一段文字
+</div>
+<div id="sec">
+    第二个盒子
+</div>
+<button id="btn">添加样式</button>
+</body>
+<script>
+    //需求 font-size 设置成30px; 设置宽度为200px
+    //设置高度为100px;设置行高为100px;
+    // 设置一像素的边框
+
+    var box = document.getElementById('box');
+    var btn = document.getElementById('btn');
+    var sec = document.getElementById('sec');
+
+    btn.onclick = function () {
+        // box.style.fontSize = '30px';
+        // box.style.width = '200px';
+        // box.style.height = '100px';
+        // box.style.lineHeight = '100px';
+        // box.style.border = '1px solid #000';
+        //
+        // sec.style.fontSize = '30px';
+        // sec.style.width = '200px';
+        // sec.style.height = '100px';
+        // sec.style.lineHeight = '100px';
+        // sec.style.border = '1px solid #000';
+
+
+        //为了避免冗的代码 用类样式
+        box.className = "addStyle";
+        sec.className = "addStyle";
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+</script>
+</html>

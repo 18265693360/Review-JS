@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #parent{
+            border: 1px solid #000;
+            width: 600px;
+            height: 600px;
+        }
+        #child{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background: #ffff00;
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <div id="child"></div>
+</div>
+</body>
+<script>
+    var parent = document.getElementById('parent');
+    var child = document.getElementById('child');
+
+    //获取我点击的鼠标位置
+
+    //事件对象
+    // box.onmousedown = function (ev) {
+    //     // console.log(ev.clientX);
+    //     console.log(ev);
+    // }
+
+
+    //块级元素的拖动
+    //需要在拖动元素上添加 position:absoluate left:0  top:0
+    child.onmousedown = function (ev) {
+        ev = ev || window.event;
+
+        var clientX = ev.clientX;
+        var clientY = ev.clientY;
+        var originX = this.offsetLeft;
+        var originY = this.offsetTop;
+
+            //事件监听函数事件都是小写 不用驼峰
+        //消除随意快速拖动时脱离鼠标控制bug  改变鼠标的作用区域
+        // child.onmousemove = function (ev) {
+        //     child.style.left = ev.clientX - clientX + originX + "px";
+        //     child.style.top = ev.clientY - clientY + originY + "px";
+        // }
+        //
+        // //鼠标不在元素上元素就不会动
+        // child.onmouseup = function () {
+        //     child.onmousemove = null
+        // }
+
+        //变child 为 document 消除bug
+        document.onmousemove = function (ev) {
+            child.style.left = ev.clientX - clientX + originX + "px";
+            child.style.top = ev.clientY - clientY + originY + "px";
+        };
+
+        //鼠标不在元素上元素就不会动
+        document.onmouseup = function () {
+            document.onmousemove = null
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
