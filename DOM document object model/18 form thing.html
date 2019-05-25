@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="https://www.baidu.com" id="form">
+    用户名：<input type="text" name="username" id="username">
+    <br>
+    密码：<input type="password" name="password" id="password">
+    <br>
+    <button type="submit" id="btn1">提交</button>
+    <button typeof="reset" id="btn2">重置</button>
+</form>
+</body>
+<script>
+    /*
+    * 表单事件
+    * submit表单事件
+    * reset 重置事件
+    * change change事件
+    * input 事件h5新添加
+    * */
+
+    var username = document.getElementById('username')
+    var password = document.getElementById('password')
+    var form = document.getElementById('form')
+    // var btn2 = document.getElementById('btn2')
+
+    form.onsubmit = function (ev) {
+        ev.preventDefault();//防止双重提交
+        console.log('表单即将添加哦');
+    }
+
+    //reset 重置清空
+    form.onreset = function (ev) {
+        var isReset =  confirm('确定要重置');
+        if (!isReset){//意味着点击取消就不会重置
+            ev.preventDefault()
+        }
+    }
+
+
+    username.onchange = function () {//表单元素失去焦点的时候触发 & 有内容发生改变
+        console.log(this.value);
+    }
+
+    //实时触发 这是vue实现数据双向绑定的前提//IE9及以上
+    username.oninput = function () {
+        console.log(this.value);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

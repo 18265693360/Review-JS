@@ -25,6 +25,13 @@
 </head>
 <body>
 <div id="parent">
+    <h1>我是标题 </h1>
+    <h1>我是标题 </h1>
+    <h1>我是标题 </h1>
+    <h1>我是标题 </h1>
+    <h1>我是标题 </h1>
+    <h1>我是标题 </h1>
+    <h1>我是标题 </h1>
     <div id="child"></div>
 </div>
 </body>
@@ -64,9 +71,45 @@
         // }
 
         //变child 为 document 消除bug
-        document.onmousemove = function (ev) {
-            child.style.left = ev.clientX - clientX + originX + "px";
-            child.style.top = ev.clientY - clientY + originY + "px";
+
+    //     document.onmousemove = function (ev) {
+    //         child.style.left = ev.clientX - clientX + originX + "px";
+    //         child.style.top = ev.clientY - clientY + originY + "px";
+    //     };
+    //
+    //     //鼠标不在元素上元素就不会动
+    //     document.onmouseup = function () {
+    //         document.onmousemove = null
+    //     }
+    // }
+
+
+    document.onmousemove = function (ev) {
+        ev.preventDefault();//随便拖动都不会选中文字
+        var left = ev.clientX - clientX + originX;
+        var top = ev.clientY - clientY + originY;
+
+        // if (left >= parent.offsetWidth - child.offsetWidth ){
+        if (left >= parent.offsetWidth - child.offsetWidth - 50){//磁吸效果
+               left = parent.offsetWidth - child.offsetWidth
+        }else if (left <= 0){
+            left = 0
+        }
+
+        if (top >= parent.offsetHeight - child.offsetHeight){
+                top = parent.offsetHeight - child.offsetHeight
+        } else if (top <= 0){
+            top = 0
+        }
+
+
+        //原型
+        // child.style.left = ev.clientX - clientX + originX + "px";
+        // child.style.top = ev.clientY - clientY + originY + "px";
+
+        child.style.left = left + "px";
+        child.style.top = top + "px";
+
         };
 
         //鼠标不在元素上元素就不会动
@@ -74,6 +117,14 @@
             document.onmousemove = null
         }
     }
+
+//     offsetWidth、offsetHeight
+//     表示元素的大小：
+//     offsetWidth = border+padding+width
+//     offsetHeight = border+padding+height
+
+
+
 
 
 

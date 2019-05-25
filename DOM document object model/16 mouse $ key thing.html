@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #par{
+            border: 1px solid #000;
+            width: 600px;
+            height: 600px;
+            background: #f5c6cb;
+        }
+        #chi{
+            border: 1px solid #000;
+            width: 200px;
+            height: 200px;
+            background: #fd7e14;
+        }
+    </style>
+</head>
+<body>
+<div id="par">
+    <div id="chi">
+    </div>
+</div>
+</body>
+<script>
+
+    /*
+    * click 单击事件 dbclick 双击事件
+    * mouseover 鼠标滑过 mouseenter 鼠标进入
+    * mouseleave 鼠标离开  mousedown鼠标按下
+    * mouseup 鼠标弹起
+    * */
+
+
+    var par = document.getElementById('par');
+    var chi = document.getElementById('chi');
+
+    // chi.onclick = function () {
+    //     console.log('鼠标被点击了');
+    // }
+
+    // chi.ondblclick = function () {
+    //     console.log('双击事件');
+    // }
+
+
+    //mouseover & mouseenter
+    //mouseover会反复触发 mouseenter不会
+    // par.onmouseover = function () {
+    //     console.log('mouseover');
+    // }
+    //
+    // par.onmouseenter = function () {
+    //     console.log('mouseenter');
+    // }
+
+
+    par.onmousedown = function () {
+        console.log('mousedown');
+    }
+    par.onmouseup = function () {
+        console.log('mouseleave');
+    }
+
+
+    par.onmouseleave = function (ev) {
+        console.log(ev.clientY);
+        console.log(ev.clientX);
+        console.log('mouseleave');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

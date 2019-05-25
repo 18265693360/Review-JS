@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            background: #ffff00;
+        }
+    </style>
+</head>
+<body>
+<!--<div id="box"></div>-->
+<div id="con">
+    <form action="https://www.baidu.com" id="form">
+        用户名：<input type="text" name="username">
+        <br>
+        密码：<input type="password" name="password" id="password">
+        <br>
+        <button>提交</button>
+    </form>
+</div>
+</body>
+<script>
+    // 获取按下的键盘按键Unicode值：
+    // var x = event.keyCode;
+    // x 输出结果为:
+    // 119   // 119 是字符 "w"
+
+    // keydown keypress keyup
+    //keydown  keypress 都表示按下 有差别
+    //keydown 响应所有按下的键 keypress 只响应字符键（字母 数字 符号）
+
+    var box = document.getElementById('box');
+    var con = document.getElementById('con');
+    var form = document.getElementById('form');
+    var password = document.getElementById('password');
+
+    //阻止默认提交事件
+    form.onsubmit = function (ev){
+        ev.preventDefault()
+    };
+
+
+
+    document.onkeydown = function (ev) {
+        ev = ev || window.event;//兼容 window.event IE
+        console.log(ev.keyCode);//获取按键值
+        if (ev.keyCode == 37){
+            box.style.left = box.offsetLeft - 100 + 'px';
+        } else if (ev.keyCode == 38){
+            box.style.top = box.offsetTop - 2 + 'px';
+        }else if (ev.keyCode == 39){
+            box.style.left = box.offsetLeft + 40 + 'px';
+        } else if (ev.keyCode == 40){
+            box.style.top = box.offsetTop + 10 + 'px';
+            // box.style.top = box.offsetTop + 10 + 'px';
+            //                                移动速度
+        }
+
+    }
+
+
+    //keycode 用法
+    password.onkeydown = function (ev) {
+        ev = ev || window.event;
+
+        //这里就是 按回车提交 keycode用处
+        if (ev.keyCode == 13){
+            console.log('提交');
+        }
+    }
+    
+    document.onkeyup = function (ev) {
+        console.log('松开按键');
+    }
+
+
+</script>
+</html>
