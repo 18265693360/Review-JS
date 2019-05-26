@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul">
+    <li>我是事件源1</li>
+    <li>我是事件源2</li>
+    <li>我是事件源3</li>
+    <li>我是事件源4</li>
+    <li>我是事件源5</li>
+    <li>我是事件源6</li>
+    <li>我是事件源7</li>
+    <li>我是事件源8</li>
+    <li>我是事件源9</li>
+    <li>我是事件源10</li>
+</ul>
+<a href="https://taobao.com" id="link">百度一下</a>
+</body>
+<script>
+    // 5.事件对象
+    // 当我点击了一个盒子，我要得到点击这个盒子上的具体坐标。
+    // 我们要实现一个游戏上面的上下左右移动的功能，
+    // 怎么去获取用户按了哪个键?
+
+    // 事件对象从什么地方来？
+    // 在标准浏览器中，事件对象是作为监听器函数的一个参数。
+    // 参数名没有任何要求。
+
+    // 在ie浏览器中，
+    // 事件对象作为window的个event属性来存在，
+    // 属性名是固定不变。就是是event,用window.event来表示。
+
+    // 不同类型的事件，事件对象所提供的参数也不一样:
+    // 比如：键盘事件，里面就有不同的键码：
+
+    // 事件处理函数不能用箭头函数  *（箭头函数绑定父级上下文）
+
+    // 注意，在HTML绑定事件中，
+    // 监听器中的this并不总是指向当前的事件源，有的时候指向window。
+
+    // 对于DOM0，DOM2级时，
+    // 可以使用this来简化我们代码，
+    // 但是对于HTML级的事件绑定，不要用this。
+
+    // 对于HTML级事件绑定，怎么让this代码当前事件源呢？
+    // 1，在事件监听函数中，可以使用this，表示事件源
+    // 2，如果是使用HTML方式来绑定的话，
+    // this并不总是指向事件源，需要通过参数进行传递。
+
+    // HTML 事件的例子：
+    // 当用户点击鼠标时
+    // 当网页加载后
+    // 当图像加载后
+    // 当鼠标移至元素上时
+    // 当输入字段被改变时
+    // 当 HTML 表单被提交时
+    // 当用户敲击按键时
+
+
+
+    //this指向事件源本身
+    var ul = document.getElementById('ul');
+    var lis = ul.getElementsByTagName('li')
+    var link = document.getElementById('link')
+
+    for (var i = 0; i < lis.length; i++){
+        lis[i].onclick = function () {
+            console.log(this);
+        }
+    }
+
+    link.onclick = function (ev) {
+        // return false;
+        ev.preventDefault();//默认格式
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

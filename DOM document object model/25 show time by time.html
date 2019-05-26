@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>现在时间是</h1>
+<h2 id="timer">现在的时间是</h2>
+</body>
+<script src="./moment.js"></script>
+<script>
+    //原生 js
+    // var timer = document.getElementById('timer');
+    //
+    // function setTime() {
+    //     var date = new Date();
+    //     var year = date.getFullYear();
+    //     var mon = date.getMonth()+1;
+    //     var day = date.getDate();
+    //     var hour = date.getHours();
+    //     var min = date.getMinutes();
+    //     var sec = date.getSeconds();
+    //
+    //     var str = year + '年' + mon + '月' + day + '日' + hour + '时'
+    //         + min + '分' + sec + '秒';
+    //
+    //     timer.innerText = str;
+    // }
+    //
+    // setInterval(function () {
+    //   setTime()
+    // },1000)
+
+
+    //moment 简短
+
+
+    var timer = document.getElementById('timer');
+
+
+    //注意是moment() 要带小括号
+
+    function setTime() {
+        // var str = moment.format('YYYY年MM月DD日 HH时mm分ss秒');
+        var str = moment().format('YYYY年MM月DD日 HH时mm分ss秒');
+        timer.innerText = str;
+    }
+
+    setTime();
+
+    setInterval(function () {
+        setTime();
+    },1000)
+
+
+
+    //
+    // setTime();
+    //
+    // setInterval(function () {
+    //     setTime();
+    // }, 1000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

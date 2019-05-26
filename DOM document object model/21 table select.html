@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #container {
+            margin-left: 30px;
+            border: 1px solid #000;
+            background: #fff;
+            padding: 10px;
+            width: 500px;
+        }
+        ul{
+            list-style: none;
+        }
+        #header li{
+            list-style: none;
+            float: left;
+            width: 100px;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+        }
+        #header li.active{
+            font-weight: 600;
+            border-bottom: 2px solid #409eff;
+        }
+        #content{
+            min-height: 200px;
+            margin-top: 10px;
+        }
+        #content li{
+            display: none;
+        }
+        #content li.active{
+            display: block;
+        }
+        .clearfixed::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="header" class="clearfixed">
+        <li class="active">选项一</li>
+        <li>选项二</li>
+        <li>选项三</li>
+        <li>选项四</li>
+        <li>选项五</li>
+    </ul>
+    <ul id="content">
+        <li class="active">内容一</li>
+        <!--加入active就是会显示选项卡内容-->
+        <li>内容二</li>
+        <li>内容三</li>
+        <li>内容四</li>
+        <li>内容五</li>
+    </ul>
+</div>
+</body>
+<script>
+    var header = document.getElementById('header');
+    var headerLi = header.getElementsByTagName('li');
+    //这里错了 li取自header content 不是document
+    // var content = document.getElementById('content');
+    var content = document.getElementById('content');
+    var contentLi = content.getElementsByTagName('li');
+
+    // 实现选项卡变换
+    // 遍历让所有元素没有ative然后再添加自己的点击事件
+    // for (var i = 0; i < headerLi.length; i++){
+    //     headerLi[i].onclick = function () {
+    //         for (var j = 0; j < headerLi.length; j++){
+    //             headerLi[j].className = '';
+    //         }
+    //         this.className = 'active';
+    //     }
+    // }
+
+    // for (var i = 0; i < headerLi.length; i++){
+    //     headerLi[i].index = i;
+    //     headerLi[i].onclick = function () {
+    //         for (var n = 0; n < headerLi.length; n++){
+    //             headerLi[n].className = '';//先去除他们的active
+    //         }
+    //         this.className = 'active';
+    //
+    //         for (var m = 0; m < contentLi.length; m++){
+    //             contentLi[m].className = '';
+    //         }
+    //         contentLi[this.index].className = 'active';
+    //     }
+    // }
+    //
+    //
+    for (var i=0; i<headerLi.length; i++){
+        headerLi[i].index = i;
+        headerLi[i].onclick = function () {
+            for (var n = 0; n<headerLi.length; n++){
+                headerLi[n].className = " ";
+                contentLi[n].className = " ";
+
+            }
+            this.className = 'active';
+            contentLi[this.index].className = 'active';
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

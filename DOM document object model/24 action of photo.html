@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background: #409eff;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script>
+    // 每秒钟变换25张图片 有动画效果
+    // 60帧 流畅
+    var box = document.getElementById('box');
+
+    var timer = setInterval(function () {
+        //匀速
+        // box.style.left = box.offsetLeft + 3 + 'px';
+
+        box.style.left = box.offsetLeft + (500 - box.offsetLeft/6) + 'px';//变速
+
+        if (box.offsetLeft == 500){
+            clearInterval(timer);
+            // console.log(box.offsetLeft);
+        } else if (500 - box.offsetLeft < 3){
+            clearInterval(timer);
+            box.style.left = "500px";
+        }
+    },1000/10)
+</script>
+</html>
